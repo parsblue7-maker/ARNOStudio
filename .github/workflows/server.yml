@@ -1,0 +1,32 @@
+name: ARNOMC Server Control
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Server action"
+        required: true
+        default: "start"
+        type: choice
+        options:
+          - start
+
+jobs:
+  server:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Start request
+        run: |
+          echo "======================================"
+          echo "       ARNOMC BEDROCK SERVER"
+          echo "          Minecraft 1.21.51"
+          echo "======================================"
+          echo
+          echo "Start request received."
+          echo "Maximum runtime: 3 hours"
+          echo
+          echo "Plait connection will be added later."
